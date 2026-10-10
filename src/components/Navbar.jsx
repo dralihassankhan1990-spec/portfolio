@@ -58,7 +58,7 @@ const Navigation = () => {
             expanded={expanded}
             className={`navbar-custom fixed-top ${scrolled ? 'scrolled' : ''}`}
             style={{
-                backgroundColor: scrolled ? 'rgba(17, 7, 31, 0.95)' : 'rgba(17, 7, 31, 0.8)',
+                backgroundColor: scrolled ? 'rgba(6, 10, 20, 0.95)' : 'rgba(6, 10, 20, 0.8)',
                 backdropFilter: 'blur(10px)',
                 padding: '0.1rem 0',
                 transition: 'all 0.3s ease'
@@ -136,10 +136,9 @@ const Navigation = () => {
                         >
                             About
                         </Nav.Link>
-                        <Nav.Link 
-                            href="#projects" 
-                            className={getActiveSection() === 'projects' ? 'active' : ''}
-                            onClick={(e) => handleNavClick(e, '#projects', true)}
+                        <Nav.Link
+                            href="/projects"
+                            onClick={(e) => handleNavClick(e, '/projects')}
                             style={{
                                 color: 'var(--text-primary)',
                                 fontSize: '1rem',
@@ -151,8 +150,22 @@ const Navigation = () => {
                         >
                             Projects
                         </Nav.Link>
+                        <Nav.Link
+                            href="/components"
+                            onClick={(e) => handleNavClick(e, '/components')}
+                            style={{
+                                color: 'var(--text-primary)',
+                                fontSize: '1rem',
+                                fontWeight: '500',
+                                padding: '0.5rem 1rem',
+                                borderRadius: '8px',
+                                transition: 'all 0.3s ease'
+                            }}
+                        >
+                            Components
+                        </Nav.Link>
 
-                        <Nav.Link 
+                        <Nav.Link
                             href="#contact" 
                             className={getActiveSection() === 'contact' ? 'active' : ''}
                             onClick={(e) => handleNavClick(e, '#contact', true)}

@@ -4,6 +4,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Contact = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [requestedItem, setRequestedItem] = useState(null);
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const item = params.get('item');
+        if (item) setRequestedItem(item);
+    }, []);
 
     useEffect(() => {
         // This runs only on the client side
@@ -28,6 +35,14 @@ const Contact = () => {
 
                 <div className="text-center mb-5">
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        {requestedItem && (
+                            <div className="mb-4 p-3 rounded glow-gold" style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.45)', color: 'var(--text-primary)' }}>
+                                <strong className="text-gradient-gold">★ You&apos;re asking about: {requestedItem}</strong>
+                                <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }} className="mt-1">
+                                    Mention it in your email — I&apos;ll send the code and setup help right over.
+                                </div>
+                            </div>
+                        )}
                         <p style={{ 
                             fontSize: '1.2rem', 
                             color: 'var(--text-primary)',
@@ -48,7 +63,7 @@ const Contact = () => {
                             padding: '0 1rem'
                         }}>
                             <a 
-                                href="mailto:dr.bilal492@gmail.com" 
+                                href={requestedItem ? `mailto:dr.bilal492@gmail.com?subject=${encodeURIComponent("Component request: " + requestedItem)}` : "mailto:dr.bilal492@gmail.com"} 
                                 style={{
                                     display: 'flex',
                                     flexDirection: isMobile ? 'column' : 'row',
@@ -178,7 +193,7 @@ const Contact = () => {
                         <a href="https://www.linkedin.com/in/bilal492/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', transition: 'color 0.3s' }} title="LinkedIn">
                             <i className="bi bi-linkedin"></i>
                         </a>
-                        <a href="mailto:dr.bilal492@gmail.com" style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', transition: 'color 0.3s' }} title="Email">
+                        <a href={requestedItem ? `mailto:dr.bilal492@gmail.com?subject=${encodeURIComponent("Component request: " + requestedItem)}` : "mailto:dr.bilal492@gmail.com"} style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', transition: 'color 0.3s' }} title="Email">
                             <i className="bi bi-envelope"></i>
                         </a>
                     </div>

@@ -1,69 +1,156 @@
 "use client";
-import React from 'react';
+import React, { useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { FiArrowDown, FiCpu, FiLayers, FiCheckCircle } from 'react-icons/fi';
 import "../app/globals.css";
-import Image from 'next/image';
+
+const floatBadges = [
+    { icon: <FiCpu />, label: 'AI Apps', x: '-12%', y: '8%', delay: 0 },
+    { icon: <FiLayers />, label: 'Full-Stack', x: '88%', y: '22%', delay: 0.8 },
+    { icon: <FiCheckCircle />, label: 'QA Automation', x: '-8%', y: '72%', delay: 1.6 },
+];
 
 const Hero = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+
+    // Scroll-driven 3D transforms: hero "opens up" as you scroll
+    const imgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+    const imgRotate = useTransform(scrollYProgress, [0, 1], [0, -12]);
+    const imgScale = useTransform(scrollYProgress, [0, 1], [1, 0.82]);
+    const textY = useTransform(scrollYProgress, [0, 1], [0, 220]);
+    const textOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+    const orbsY = useTransform(scrollYProgress, [0, 1], [0, -160]);
+
     return (
-        <section id="home" className="hero-section">
-            <Container>
+        <section id="home" ref={ref} className="hero-section position-relative overflow-hidden" style={{ minHeight: '100vh', paddingTop: '110px' }}>
+            {/* Animated ambient orbs */}
+            <motion.div style={{ y: orbsY }} className="position-absolute w-100 h-100" aria-hidden>
+                <motion.div
+                    className="position-absolute rounded-circle"
+                    style={{ width: 480, height: 480, left: '-120px', top: '6%', background: 'radial-gradient(circle, rgba(34,211,238,0.22) 0%, transparent 70%)', filter: 'blur(10px)' }}
+                    animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
+                    transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <motion.div
+                    className="position-absolute rounded-circle"
+                    style={{ width: 520, height: 520, right: '-140px', top: '30%', background: 'radial-gradient(circle, rgba(129,140,248,0.20) 0%, transparent 70%)', filter: 'blur(10px)' }}
+                    animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <motion.div
+                    className="position-absolute rounded-circle"
+                    style={{ width: 380, height: 380, left: '38%', bottom: '-80px', background: 'radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%)', filter: 'blur(10px)' }}
+                    animate={{ x: [0, 30, 0], y: [0, -24, 0] }}
+                    transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+                />
+            </motion.div>
+
+            <Container className="position-relative" style={{ zIndex: 2 }}>
                 <Row className="align-items-center">
-                    <Col lg={5} className="pe-5">
-                        <div className="purple-radial-bg" style={{ position: 'relative', width: 'fit-content' }}>
-                            <div className="profile-glow"></div>
-                            <div style={{
-                                width: '350px',
-                                height: '350px',
-                                position: 'relative',
-                                zIndex: 2
-                            }}>
-                                <img
+                    <Col lg={5} className="perspective-1200 mb-5 mb-lg-0">
+                        <motion.div style={{ y: imgY, rotateY: imgRotate, scale: imgScale }} className="preserve-3d position-relative mx-auto" >
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.85, rotateY: -18 }}
+                                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
+                                className="position-relative"
+                                style={{ width: 'min(340px, 80vw)', height: 'min(340px, 80vw)', margin: '0 auto' }}
+                            >
+                                <div className="position-absolute w-100 h-100 rounded-circle glow-cyan" style={{ filter: 'blur(28px)', opacity: 0.5 }} />
+                                <motion.img
                                     src="/Me.jpg"
                                     alt="Muhammad Bilal"
-                                    className="img-fluid rounded-circle"
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        border: '3px solid rgba(139, 92, 246, 0.3)'
-                                    }}
+                                    className="img-fluid rounded-circle position-relative"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', border: '3px solid rgba(34, 211, 238, 0.5)', zIndex: 2 }}
+                                    animate={{ y: [0, -12, 0] }}
+                                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                                 />
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={7} className="ps-5">
-                        <div className="profile-container">
-                            <p className="greeting margin-bottom-4" style={{ color: 'var(--text-primary)' }}>
-                                Hello! I am <span className="text-purple">Muhammad Bilal</span>
-                            </p>
-                            <p className="mt-3" style={{ color: 'var(--text-secondary)' }}>
-                                Program Officer / Project Coordinator at PITB
-                            </p>
-                            <h1 style={{ color: 'var(--text-primary)' }}>
-                                Delivering GovTech<br />
-                                <span className="highlight text-purple">digital transformation</span>...
-                            </h1>
-                            <p className="mt-4" style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-                                8+ years turning requirements into working systems — from LIMS and QMS to AI-powered apps and test automation.
-                            </p>
-                        </div>
+                                {/* Orbiting ring */}
+                                <motion.div
+                                    className="position-absolute rounded-circle"
+                                    style={{ inset: '-18px', border: '1px dashed rgba(34,211,238,0.4)', zIndex: 1 }}
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+                                />
+                            </motion.div>
+
+                            {/* Floating 3D badges */}
+                            {floatBadges.map((b, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="position-absolute card-3d d-flex align-items-center gap-2 px-3 py-2"
+                                    style={{ left: b.x, top: b.y, zIndex: 3, fontSize: '0.85rem', color: 'var(--text-primary)' }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: [0, -10, 0] }}
+                                    transition={{ opacity: { delay: 0.6 + b.delay, duration: 0.6 }, y: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: b.delay } }}
+                                >
+                                    <span style={{ color: 'var(--purple-primary)' }}>{b.icon}</span>
+                                    <strong>{b.label}</strong>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </Col>
 
+                    <Col lg={7}>
+                        <motion.div style={{ y: textY, opacity: textOpacity }}>
+                            <motion.p
+                                initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+                                className="mb-2" style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}
+                            >
+                                Hello! I am <span className="text-gradient-cyan fw-bold">Muhammad Bilal</span>
+                            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+                                className="mt-1 mb-3" style={{ color: 'var(--text-secondary)' }}
+                            >
+                                Program Officer / Project Coordinator at PITB
+                            </motion.p>
+                            <motion.h1
+                                initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+                                style={{ color: 'var(--text-primary)', lineHeight: 1.15 }}
+                            >
+                                Delivering GovTech<br />
+                                <span className="text-gradient-cyan">digital transformation</span>...
+                            </motion.h1>
+                            <motion.p
+                                initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
+                                className="mt-4" style={{ fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '560px' }}
+                            >
+                                8+ years turning requirements into working systems — from LIMS and QMS to AI-powered apps and test automation.
+                            </motion.p>
+                            <motion.div
+                                initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
+                                className="mt-4 d-flex flex-wrap gap-3"
+                            >
+                                <a href="/projects" className="btn btn-glow-cyan btn-lg px-4">Explore Projects</a>
+                                <a href="/components" className="btn btn-lg px-4" style={{ border: '1px solid rgba(34,211,238,0.5)', color: 'var(--text-primary)' }}>UI Components</a>
+                            </motion.div>
+                        </motion.div>
+                    </Col>
                 </Row>
 
                 <Row className="justify-content-center mt-5">
                     <Col lg={8} className="text-center">
-                        <div className="mt-5">
-                            <h2 style={{ color: 'var(--text-primary)' }}>
-                                I&apos;m an IT Project Coordinator.
-                            </h2>
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-80px' }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 style={{ color: 'var(--text-primary)' }}>I&apos;m an IT Project Coordinator.</h2>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                                with hands-on experience in <span className="text-purple fw-semibold">GovTech delivery, web application development, and QA automation</span>.
+                                with hands-on experience in <span className="fw-semibold text-gradient-cyan">GovTech delivery, web application development, and QA automation</span>.
                             </p>
-                        </div>
-
-                        <div className="mt-4">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-80px' }}
+                            transition={{ duration: 0.8, delay: 0.15 }}
+                            className="mt-4"
+                        >
                             <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                                 I lead the PAFDA Laboratory Information Management System program — multi-module delivery spanning LIMS, QMS, HR, and storage management — from BRDs and UAT through go-live and beyond.
                             </p>
@@ -73,12 +160,21 @@ const Hero = () => {
                             <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                                 My background in project coordination means every build starts from real requirements and ends with something users can actually adopt.
                             </p>
-                        </div>
+                        </motion.div>
                     </Col>
                 </Row>
-            </Container>
 
-        </section >
+                <motion.div
+                    className="text-center mt-5 pb-4"
+                    style={{ color: 'var(--text-muted)' }}
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                >
+                    <FiArrowDown size={26} />
+                    <div style={{ fontSize: '0.8rem', letterSpacing: '0.2em' }}>SCROLL</div>
+                </motion.div>
+            </Container>
+        </section>
     );
 };
 
