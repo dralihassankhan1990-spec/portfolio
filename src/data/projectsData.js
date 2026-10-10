@@ -25,7 +25,7 @@ Stack: Playwright, Python, openpyxl, Excel-driven test data.`,
         tags: ['Playwright', 'Python', 'QA Automation', 'Excel-Driven', 'Video Reporting'],
         align: 'left',
         liveLink: 'https://drive.google.com/file/d/1mwe1m6-G_CGW5EDao2TEsLKjx4xS79Ed/view?usp=drivesdk',
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/playwright-qa-automation-demo'
     },
     {
         id: 2,
@@ -44,7 +44,7 @@ Runs as a static site — deployed on Vercel.`,
         tags: ['React', 'TypeScript', 'face-api.js', 'Face Recognition', 'Privacy-First'],
         align: 'right',
         liveLink: 'https://attendance-system-chi-three.vercel.app/',
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/faceguard-ai'
     },
     {
         id: 3,
@@ -66,7 +66,7 @@ Deployed on Vercel.`,
         tags: ['React', 'MediaPipe', 'Computer Vision', 'PowerPoint', 'Touchless UI'],
         align: 'left',
         liveLink: 'https://gesture-flowppt.vercel.app/',
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/gestureflow'
     },
     {
         id: 4,
@@ -88,7 +88,7 @@ Full developer docs: implementation roadmap, testing guide, and codebase analysi
         tags: ['React', 'NestJS', 'TypeScript', 'REST API', 'MongoDB'],
         align: 'right',
         liveLink: null,
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/dietandwell'
     },
     {
         id: 5,
@@ -106,7 +106,7 @@ All data currently mocked via mockData.ts with a documented path to plug in a re
         tags: ['React', 'TypeScript', 'Zustand', 'Marketplace', 'Tailwind'],
         align: 'left',
         liveLink: null,
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/bazmeer-webportal'
     },
     {
         id: 6,
@@ -126,7 +126,7 @@ Zero-backend architecture: everything runs client-side; lazy-loaded camera keeps
         tags: ['React', 'AR', 'Camera', 'Health', 'Offline-First'],
         align: 'right',
         liveLink: null,
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/portionvision'
     },
     {
         id: 7,
@@ -145,7 +145,7 @@ Includes setup guide, test pages, and a mobile receiver web app.`,
         tags: ['Python', 'Flask', 'MediaPipe', 'OpenCV', 'WebRTC'],
         align: 'left',
         liveLink: null,
-        sourceCode: null
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/gesturetransfer'
     },
     {
         id: 8,
@@ -165,5 +165,59 @@ Concept build — demonstrates domain understanding, not affiliated with any emp
         align: 'right',
         liveLink: null,
         sourceCode: null
+    },
+    {
+        id: 9,
+        title: 'Veritas HACCP - Food Safety Compliance Dashboard',
+        description: 'Interactive HACCP compliance dashboard: 12-step implementation workflow, full Principle-5 deviation handling, first-run guided tour, and a server-backed API. Built with React, TypeScript, and Vite.',
+        fullDescription: `Veritas HACCP - Food Safety Compliance Dashboard
+Built with React, TypeScript, Vite, and Express.
+
+• 12-step HACCP implementation workflow with progress tracking
+• Complete Principle-5 deviation workflow (corrective actions)
+• First-run guided tour, replayable from the header
+• Server-backed API with SQLite persistence
+• Demo guide included for a 5-minute walkthrough`,
+        image: '/diet3.JPG',
+        tags: ['React', 'TypeScript', 'HACCP', 'Food Safety', 'Dashboard'],
+        align: 'left',
+        liveLink: null,
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/HACCP'
+    },
+    {
+        id: 10,
+        title: 'RecallGuard - Food Recall & Traceability System',
+        description: 'Digital recall and traceability system: one-click hero demo (92/CRITICAL/HOLD scenario), guided tour, empty states, and a full test suite (13/13 passing). Express + SQLite backend with a React frontend.',
+        fullDescription: `RecallGuard - Food Recall & Traceability System
+Backend: Express + SQLite. Frontend: React + Vite.
+
+• One-click "Run hero demo" mode (92/CRITICAL/HOLD scenario)
+• Guided tour and empty states for first-time users
+• Full test suite: 13/13 passing
+• Traceability records, recall workflows, and reporting`,
+        image: '/diet4.JPG',
+        tags: ['React', 'Node.js', 'SQLite', 'Traceability', 'Food Safety'],
+        align: 'right',
+        liveLink: null,
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/recallguard'
+    },
+    {
+        id: 11,
+        title: 'AuditPro - Food-Safety Audit Management (Demo)',
+        description: 'Demo web app for planning, running, scoring, and closing food-safety audits — checkpoint verdicts, an auto-derived findings register, and a CAPA workflow through to verified closure. Offline-first with localStorage.',
+        fullDescription: `AuditPro - Food-Safety Audit Management (Demo)
+Built with React and Vite. Zero-backend — all state in localStorage.
+
+• Audit planning: templates, sites, auditors, progress and scores
+• Findings register auto-derived from checkpoint verdicts (Minor NC and above)
+• CAPA workflow: root cause → corrective action → owner → due date → verification → closure
+• Dashboard: compliance gauges, findings-by-severity, repeat-finding analysis
+
+Demonstration prototype — not a certified audit system.`,
+        image: '/diet5.JPG',
+        tags: ['React', 'Vite', 'Audits', 'CAPA', 'Offline-First'],
+        align: 'left',
+        liveLink: null,
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/auditpro'
     }
 ];
