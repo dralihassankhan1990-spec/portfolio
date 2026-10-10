@@ -1,9 +1,18 @@
-// Project data — verified against the actual source code in Drive ("My Project for Muse").
-// GitHub repo links are added as repositories are published.
+// Project data — verified against the actual source code.
+// Categories: 'ai' (AI & Computer Vision), 'web' (Web Platforms & Systems), 'automation' (QA & Automation)
+// GitHub repo links: 9 of 10 live (dietandwell repo exists, code push deferred by owner).
+
+export const projectCategories = [
+    { id: 'ai', label: 'AI & Computer Vision', icon: '🧠', blurb: 'Face recognition, gesture control, and vision-powered apps that run in the browser.' },
+    { id: 'web', label: 'Web Platforms & Systems', icon: '🌐', blurb: 'Full-stack platforms — marketplaces, nutrition, food-safety systems, and LIMS concepts.' },
+    { id: 'automation', label: 'QA & Automation', icon: '⚙️', blurb: 'Test automation frameworks and office productivity tools that remove repetitive work.' },
+];
+
 export const projects = [
     {
         id: 1,
         title: 'Playwright QA Automation Demo',
+        category: 'automation',
         description: 'Excel-driven Playwright automation demo: 5 test scenarios (form flows, KPI report generation, sprint-board task automation) with 5/5 passing. Every run produces video evidence, screenshots, an Excel results sheet, and a narrated walkthrough video.',
         fullDescription: `Playwright QA Automation Demo
 An Excel-driven Playwright test-automation demo built on public demo sites — deliberately decoupled from any work system.
@@ -21,15 +30,15 @@ What every run produces:
 • A 2:51 narrated walkthrough video (25 segments: test-data sheet → per-scenario card, row, real clip, result → KPI + sprint sheets → finale)
 
 Stack: Playwright, Python, openpyxl, Excel-driven test data.`,
-        image: '/prijectmanagment.jpg',
+        image: '/projects/playwright-qa.jpg',
         tags: ['Playwright', 'Python', 'QA Automation', 'Excel-Driven', 'Video Reporting'],
-        align: 'left',
         liveLink: 'https://drive.google.com/file/d/1mwe1m6-G_CGW5EDao2TEsLKjx4xS79Ed/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/playwright-qa-automation-demo'
     },
     {
         id: 2,
         title: 'FaceGuard AI - Intelligent Attendance Management System',
+        category: 'ai',
         description: 'Browser-based face-recognition attendance system with two modes: Detector (surveillance logging with voice confirmation) and Attendance (face registration, hands-free auto-marking with 60-second anti-spam). All processing and storage stay local in the browser — no biometric data leaves the device.',
         fullDescription: `FaceGuard AI - Intelligent Attendance Management System
 Built with React, TypeScript, Vite, and face-api.js.
@@ -40,15 +49,15 @@ Modes:
 
 Privacy-first: all face data is stored in the browser's local storage; nothing is uploaded anywhere.
 Runs as a static site — deployed on Vercel.`,
-        image: '/facegurd- ATM.JPG',
+        image: '/projects/faceguard-ai.jpg',
         tags: ['React', 'TypeScript', 'face-api.js', 'Face Recognition', 'Privacy-First'],
-        align: 'right',
         liveLink: 'https://attendance-system-chi-three.vercel.app/',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/faceguard-ai'
     },
     {
         id: 3,
         title: 'GestureFlow - Hand-Gesture PowerPoint Control',
+        category: 'ai',
         description: 'Control PowerPoint with hand gestures via webcam: open palm starts the slideshow, fist closes it, pointing toggles the laser pointer, swipes change slides, spread/pinch zoom. A PowerShell COM bridge talks to PowerPoint on Windows — no special hardware needed.',
         fullDescription: `GestureFlow - Hand-Gesture PowerPoint Control
 Built with React, TypeScript, Vite, and MediaPipe hand tracking.
@@ -62,15 +71,15 @@ Gestures:
 
 A Node/PowerShell bridge (bridge.cjs + ps_handler.ps1) sends the commands to PowerPoint via COM on Windows.
 Deployed on Vercel.`,
-        image: '/gesture flow.JPG',
+        image: '/projects/gestureflow.jpg',
         tags: ['React', 'MediaPipe', 'Computer Vision', 'PowerPoint', 'Touchless UI'],
-        align: 'left',
         liveLink: 'https://gesture-flowppt.vercel.app/',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/gestureflow'
     },
     {
         id: 4,
         title: 'DietAndWell - Nutrition Platform',
+        category: 'web',
         description: 'Nutrition platform with a NestJS backend (50+ documented API endpoints) and React frontend: food/portion library, nutrition calculators, blog system, services showcase, and e-commerce shop with user + admin authentication.',
         fullDescription: `DietAndWell - Nutrition Platform
 Backend: NestJS (TypeScript), ~80% complete, 50+ REST endpoints documented in API_REFERENCE.md.
@@ -84,15 +93,15 @@ Features:
 • Role-based auth (users + administrators)
 
 Full developer docs: implementation roadmap, testing guide, and codebase analysis included in the repo.`,
-        image: '/dietwell.JPG',
+        image: '/projects/dietandwell.jpg',
         tags: ['React', 'NestJS', 'TypeScript', 'REST API', 'MongoDB'],
-        align: 'right',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/dietandwell'
     },
     {
         id: 5,
         title: 'BazMeer - Services Marketplace Portal',
+        category: 'web',
         description: 'Three-portal services marketplace (customer, worker/seller, admin) with 54 routes: job posting wizard, bidding with counter-offers, escrow-style payment flow (JazzCash/EasyPaisa/Card), provider search with filters, chat, wallet, verification queue, and analytics — Zustand state, mocked API layer ready for backend integration.',
         fullDescription: `BazMeer - Services Marketplace Portal
 Built with React, TypeScript, Vite, Tailwind, and Zustand.
@@ -102,15 +111,15 @@ Built with React, TypeScript, Vite, Tailwind, and Zustand.
 • Admin portal: users, sellers, verification queue, disputes, analytics
 
 All data currently mocked via mockData.ts with a documented path to plug in a real backend.`,
-        image: '/products1.JPG',
+        image: '/projects/bazmeer.jpg',
         tags: ['React', 'TypeScript', 'Zustand', 'Marketplace', 'Tailwind'],
-        align: 'left',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/bazmeer-webportal'
     },
     {
         id: 6,
         title: 'PortionVision - AR Portion-Size Visualizer',
+        category: 'ai',
         description: 'Competition-winning food portion visualizer: 20+ foods with standard serving sizes, mental-model comparisons (3oz steak = deck of cards), and a camera AR overlay that projects a wireframe reference object onto the real world. Zero-backend — runs fully client-side with LocalStorage.',
         fullDescription: `PortionVision - AR Portion-Size Visualizer
 Built with React 18 and Vite. Competition entry.
@@ -122,15 +131,15 @@ Built with React 18 and Vite. Competition entry.
 • High-contrast accessibility mode; mobile-first glassmorphism UI
 
 Zero-backend architecture: everything runs client-side; lazy-loaded camera keeps the dashboard instant.`,
-        image: '/diet2.JPG',
+        image: '/projects/portionvision.jpg',
         tags: ['React', 'AR', 'Camera', 'Health', 'Offline-First'],
-        align: 'right',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/portionvision'
     },
     {
         id: 7,
         title: 'GestureTransfer - Gesture File Transfer',
+        category: 'ai',
         description: 'Transfer files between laptop and Android phone with hand gestures: fist selects, pointing sends, open palm cancels. Flask + MediaPipe + OpenCV server with QR-code connect, live push updates, and a transfer-history dashboard — hand-tracking models bundled so the phone works offline.',
         fullDescription: `GestureTransfer - Gesture File Transfer
 Python (Flask) + MediaPipe + OpenCV.
@@ -141,15 +150,15 @@ Python (Flask) + MediaPipe + OpenCV.
 • MediaPipe models bundled in static/hands/ and served by the laptop — the phone needs no internet
 
 Includes setup guide, test pages, and a mobile receiver web app.`,
-        image: '/lab 2.JPG',
+        image: '/projects/gesturetransfer.jpg',
         tags: ['Python', 'Flask', 'MediaPipe', 'OpenCV', 'WebRTC'],
-        align: 'left',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/gesturetransfer'
     },
     {
         id: 8,
         title: 'Lab Information System (Prototype)',
+        category: 'web',
         description: 'Enterprise-style laboratory management prototype with role-based access control: sample reviewing workflows, multi-level reviewer/approver chains, secure result entry, and audit-friendly data handling. Built as a personal concept aligned with real LIMS domain knowledge.',
         fullDescription: `Lab Information System (Prototype)
 Personal prototype exploring LIMS concepts: React + Node.js + PostgreSQL.
@@ -160,15 +169,15 @@ Personal prototype exploring LIMS concepts: React + Node.js + PostgreSQL.
 • Designed around real laboratory workflows (informed by the PAFDA LIMS program)
 
 Concept build — demonstrates domain understanding, not affiliated with any employer system.`,
-        image: '/lab1.JPG',
+        image: '/projects/lims.jpg',
         tags: ['React', 'Node.js', 'PostgreSQL', 'Role-Based Access', 'LIMS'],
-        align: 'right',
         liveLink: null,
         sourceCode: null
     },
     {
         id: 9,
         title: 'Veritas HACCP - Food Safety Compliance Dashboard',
+        category: 'web',
         description: 'Interactive HACCP compliance dashboard: 12-step implementation workflow, full Principle-5 deviation handling, first-run guided tour, and a server-backed API. Built with React, TypeScript, and Vite.',
         fullDescription: `Veritas HACCP - Food Safety Compliance Dashboard
 Built with React, TypeScript, Vite, and Express.
@@ -178,15 +187,15 @@ Built with React, TypeScript, Vite, and Express.
 • First-run guided tour, replayable from the header
 • Server-backed API with SQLite persistence
 • Demo guide included for a 5-minute walkthrough`,
-        image: '/diet3.JPG',
+        image: '/projects/haccp.jpg',
         tags: ['React', 'TypeScript', 'HACCP', 'Food Safety', 'Dashboard'],
-        align: 'left',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/HACCP'
     },
     {
         id: 10,
         title: 'RecallGuard - Food Recall & Traceability System',
+        category: 'web',
         description: 'Digital recall and traceability system: one-click hero demo (92/CRITICAL/HOLD scenario), guided tour, empty states, and a full test suite (13/13 passing). Express + SQLite backend with a React frontend.',
         fullDescription: `RecallGuard - Food Recall & Traceability System
 Backend: Express + SQLite. Frontend: React + Vite.
@@ -195,15 +204,15 @@ Backend: Express + SQLite. Frontend: React + Vite.
 • Guided tour and empty states for first-time users
 • Full test suite: 13/13 passing
 • Traceability records, recall workflows, and reporting`,
-        image: '/diet4.JPG',
+        image: '/projects/recallguard.jpg',
         tags: ['React', 'Node.js', 'SQLite', 'Traceability', 'Food Safety'],
-        align: 'right',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/recallguard'
     },
     {
         id: 11,
         title: 'AuditPro - Food-Safety Audit Management (Demo)',
+        category: 'web',
         description: 'Demo web app for planning, running, scoring, and closing food-safety audits — checkpoint verdicts, an auto-derived findings register, and a CAPA workflow through to verified closure. Offline-first with localStorage.',
         fullDescription: `AuditPro - Food-Safety Audit Management (Demo)
 Built with React and Vite. Zero-backend — all state in localStorage.
@@ -214,9 +223,8 @@ Built with React and Vite. Zero-backend — all state in localStorage.
 • Dashboard: compliance gauges, findings-by-severity, repeat-finding analysis
 
 Demonstration prototype — not a certified audit system.`,
-        image: '/diet5.JPG',
+        image: '/projects/auditpro.jpg',
         tags: ['React', 'Vite', 'Audits', 'CAPA', 'Offline-First'],
-        align: 'left',
         liveLink: null,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/auditpro'
     }
