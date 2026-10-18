@@ -2,6 +2,7 @@
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export const metadata = {
   title: "Muhammad Bilal | IT Project Coordinator · GovTech Digital Transformation",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         overflowX: 'hidden' 
       }}>
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

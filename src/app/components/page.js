@@ -33,6 +33,18 @@ const registry = {
     NeonGlowCard: React.lazy(() => import('@/components/showcase/NeonGlowCard')),
     CountdownTimer: React.lazy(() => import('@/components/showcase/CountdownTimer')),
     TestimonialCard: React.lazy(() => import('@/components/showcase/TestimonialCard')),
+    ProductViewer3D: React.lazy(() => import('@/components/showcase/ProductViewer3D')),
+    PricingToggle: React.lazy(() => import('@/components/showcase/PricingToggle')),
+    ChatWidget: React.lazy(() => import('@/components/showcase/ChatWidget')),
+    ImageCompareSlider: React.lazy(() => import('@/components/showcase/ImageCompareSlider')),
+    AnimatedCounter: React.lazy(() => import('@/components/showcase/AnimatedCounter')),
+    TestimonialCarousel3D: React.lazy(() => import('@/components/showcase/TestimonialCarousel3D')),
+    GradientTextAnimator: React.lazy(() => import('@/components/showcase/GradientTextAnimator')),
+    MapPinCard: React.lazy(() => import('@/components/showcase/MapPinCard')),
+    FileDropzone: React.lazy(() => import('@/components/showcase/FileDropzone')),
+    DatePicker: React.lazy(() => import('@/components/showcase/DatePicker')),
+    MusicPlayerCard: React.lazy(() => import('@/components/showcase/MusicPlayerCard')),
+    ProductQuickView: React.lazy(() => import('@/components/showcase/ProductQuickView')),
 };
 
 import { componentsData } from '@/components/showcase/componentsData';
@@ -50,7 +62,7 @@ const ComponentCard = ({ item, index, onGetCode }) => {
         >
             <div className="card-3d h-100 d-flex flex-column overflow-hidden">
                 <div className="d-flex justify-content-between align-items-center px-3 pt-3">
-                    <span className={isPro ? 'badge-pro' : 'badge-free'}>{isPro ? '★ PRO' : 'FREE'}</span>
+                    <span className={isPro ? 'badge-pro' : 'badge-free'}>{isPro ? `★ PRO${item.price ? ` · PKR ${item.price}` : ''}` : 'FREE'}</span>
                     <div className="d-flex gap-1 flex-wrap justify-content-end">
                         {item.tags.slice(0, 2).map((t, i) => (
                             <span key={i} style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>#{t}</span>

@@ -231,24 +231,6 @@ Demonstration prototype — not a certified audit system.`,
         sourceCode: 'https://github.com/dralihassankhan1990-spec/auditpro'
     },
     {
-        id: 12,
-        title: 'Playwright PM Automation',
-        category: 'automation',
-        description: 'Two production-style Playwright automations for PM teams: a status-report collector that scrapes project boards into a formatted weekly Excel + HTML report, and an 8-test UAT regression suite — both running 100% locally against fictional demo pages.',
-        fullDescription: `Playwright PM Automation
-Two browser automations for project-management teams, built with Python + Playwright. 100% local — every page is a local file:// demo page, every data set fictional.
-
-1. Status Report Collector — opens three project-board pages, scrapes every task, and aggregates a formatted weekly report: per-project completion %, overdue / due-this-week / blocked lists, workload by owner. Verified run: 36 tasks collected (12 per project). Outputs Weekly-Status-Report.xlsx + .html.
-
-2. UAT Regression Suite — runs 8 automated UAT regression tests against a local demo PM web app and produces a styled UAT-Report.html.
-
-Stack: Python, Playwright, openpyxl. Demo videos included for both.`,
-        image: '/projects/playwright-qa.jpg',
-        tags: ['Playwright', 'Python', 'UAT', 'Status Reporting', 'Excel'],
-        liveLink: 'https://drive.google.com/file/d/1mwe1m6-G_CGW5EDao2TEsLKjx4xS79Ed/view?usp=drivesdk',
-        sourceCode: 'https://github.com/dralihassankhan1990-spec/playwright-pm-automation'
-    },
-    {
         id: 13,
         title: 'n8n Local Workflows',
         category: 'automation',
@@ -261,7 +243,7 @@ Two production-shaped n8n workflows a PM team can run on its own machine — no 
 2. File Intake Organizer — watches an intake folder and files incoming documents into the right project folders automatically.
 
 All demo data fictional. TEST-REPORT.md and demo videos included.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/n8n-local-workflows.jpg',
         tags: ['n8n', 'Workflow Automation', 'Python', 'Scheduling', 'Markdown'],
         liveLink: 'https://drive.google.com/file/d/1LerlegDxudK7x9xNUaEhdI89Qp1ZUepu/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/n8n-local-workflows'
@@ -279,7 +261,7 @@ Two automations for the weekly spreadsheet grind. 100% local, fictional demo dat
 2. Weekly Report Generator (Python + openpyxl) — builds the weekly status pack from tracker exports automatically.
 
 Deliverables: .xlsm workbooks, importable .bas sources, build scripts, TEST-REPORT.md, demo videos.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-automation.jpg',
         tags: ['Excel VBA', 'Python', 'Dashboards', 'openpyxl', 'Reporting'],
         liveLink: 'https://drive.google.com/file/d/1psyfwtIVPD7vWsx5W-qi4qeCjZLWxvxD/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/excel-vba-automation'
@@ -297,7 +279,7 @@ Two production-ready desktop automations. 100% local, fictional demo data.
 2. PDF Status Report Generator — turns one Excel workbook into polished multi-page PDFs, one per project: cover page with RAG badge, KPI summary (completion %, budget used, milestones, open risks), milestone timeline, risks & issues (LxI rating), next steps. KPIs and RAG are computed, never typed. Built with fpdf2.
 
 TEST-REPORT.md and demo videos included.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/python-desktop-automation.jpg',
         tags: ['Python', 'Desktop Automation', 'PDF Reports', 'File Watching', 'fpdf2'],
         liveLink: 'https://drive.google.com/file/d/114wadrzGIWkfEXca-qobQjqxcSOAi1FI/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/python-desktop-automation'
@@ -315,7 +297,7 @@ Automations that run themselves on a schedule — the team gets its morning brie
 2. Risk Register Auto-Scorer — reads risk-register.csv every Monday 09:00, computes exposure = Probability x Impact, assigns RAG bands (Red >= 15, Amber 8-14, Green < 8), draws a 5x5 heatmap with risk IDs plotted in their cells, and produces an HTML report + scored Excel register. Sample: 15 risks → 4 Red, 9 Amber, 2 Green.
 
 Demo videos included.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/auto-trigger-scheduled.jpg',
         tags: ['Python', 'Task Scheduler', 'Risk Management', 'Escalation', 'Excel'],
         liveLink: 'https://drive.google.com/file/d/1i0x5YOQJwqtpFrA8SW8uTkUAVWdt1618/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/auto-trigger-scheduled'
@@ -333,7 +315,7 @@ Severity rules: Critical = overdue > 7 days or blocks a milestone; High = overdu
 Outputs: escalation-report-YYYY-MM-DD.md (severity summary + full flagged-task table) and escalation-log.csv (append-only; re-running the same day adds nothing).
 
 Ships workflow.json, sample tasks.csv, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/n8n-task-escalation.jpg',
         tags: ['n8n', 'Escalation', 'Scheduling', 'CSV', 'Markdown'],
         liveLink: 'https://drive.google.com/file/d/1I3RDD_HtLDeUHaZZWW5-zfA7vsy99c8c/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/n8n-task-escalation-flow'
@@ -351,7 +333,7 @@ Extraction: lines starting with ACTION:, TODO: or DECISION: are pulled out; owne
 Outputs: MOM-YYYY-MM-DD.md (decisions list + action-items table) and actions.csv (source_file, type, action, owner, due_date). Processed notes stay in inbox/; move them to archive/ after a run.
 
 Ships workflow.json, sample notes, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/n8n-meeting-notes.jpg',
         tags: ['n8n', 'Meeting Notes', 'MOM', 'Action Tracking', 'Text Processing'],
         liveLink: 'https://drive.google.com/file/d/1IL3Iv1HrahJSJZBEmQo34DoIQUqEmxXe/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/n8n-meeting-notes-processor'
@@ -367,7 +349,7 @@ Backup jobs run silently for months — nobody notices a backup going stale unti
 Workflow (standard local nodes only): Daily 07:00 Schedule Trigger → Check backup dirs (Execute Command: du + find) → Compute health + write report (Code node: size/age math, stale flags, writes output/health-report-YYYY-MM-DD.md).
 
 Ships workflow.json, sample backup tree, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/n8n-backup-monitor.jpg',
         tags: ['n8n', 'Backup Monitoring', 'Health Checks', 'Scheduling', 'Markdown'],
         liveLink: 'https://drive.google.com/file/d/134PYveGfgaeAeg0AU1NCtRg8XHkaoyHl/view?usp=drivesdk',
         sourceCode: null
@@ -383,7 +365,7 @@ Project teams bill clients by hand-copying line items into invoice templates —
 Each invoice: header block (invoice no, date, bill-to), item table with line totals, subtotal, 16% tax, grand total. Invoice numbers auto-increment (INV-2026-001...). Re-running first deletes previously generated INV-* sheets, so repeated runs never duplicate invoices.
 
 100% local, fictional data. Ships .xlsm, importable .bas source, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-invoice.jpg',
         tags: ['Excel VBA', 'Invoicing', 'Automation', 'Templates', 'Finance'],
         liveLink: 'https://drive.google.com/file/d/1DF8dRPvGHRl2U5XC0IXlrCxmz2JHTv5P/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/excel-vba-invoice-generator'
@@ -403,7 +385,7 @@ Tracking monthly attendance by hand means staring at hundreds of daily codes and
 5. Writes a summary dashboard block.
 
 Ships .xlsm, importable .bas source, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-attendance.jpg',
         tags: ['Excel VBA', 'Attendance', 'HR', 'Dashboards', 'Reporting'],
         liveLink: 'https://drive.google.com/file/d/1RQY4-BtQg97unA9JdaoqfYfAhR2YfgCc/view?usp=drivesdk',
         sourceCode: 'https://github.com/dralihassankhan1990-spec/excel-vba-attendance-tracker'
@@ -421,7 +403,7 @@ A task list is easy to start and easy to neglect — overdue work hides in the r
 3. Dashboard — live counts by status and priority, Kanban-style visibility.
 
 Ships .xlsm, VBA sources, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-task-tracker.jpg',
         tags: ['Excel VBA', 'Task Tracking', 'Kanban', 'Auto-Trigger', 'Dashboards'],
         liveLink: 'https://drive.google.com/file/d/1qwBy28bpFGd2qvrB1ultYixoT6XMZMP5/view?usp=drivesdk',
         sourceCode: null
@@ -441,7 +423,7 @@ Monthly payroll means taking each employee's basic salary and allowances, applyi
 5. Payroll-Summary sheet: headcount, total gross, total tax collected, total net pay, average net pay.
 
 No formulas to maintain, no APIs, fictional data. Ships .xlsm, .bas source, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-payroll.jpg',
         tags: ['Excel VBA', 'Payroll', 'Finance', 'Tax Slabs', 'Payslips'],
         liveLink: 'https://drive.google.com/file/d/14p9Fl8mSVt9c54AW1GCsTgQvuIfkO5sq/view?usp=drivesdk',
         sourceCode: null
@@ -457,7 +439,7 @@ Project teams send the same reminders again and again — typing them by hand at
 The script opens your own WhatsApp Web session (Playwright + a persistent browser profile), sends every message whose send_at has passed and which was not sent before, and appends the result to sent-log.csv. Re-runs never double-send: already-sent rows are skipped automatically.
 
 100% local, no APIs, no third-party services. Demo data only. Ships scheduler.py, requirements, run scripts, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/whatsapp-scheduler.jpg',
         tags: ['Python', 'Playwright', 'WhatsApp', 'Scheduling', 'CSV'],
         liveLink: 'https://drive.google.com/file/d/1Hn5PprgKVdqOoueNj-NcUhc3T1WugcT8/view?usp=drivesdk',
         sourceCode: null
@@ -473,7 +455,7 @@ The script opens your own WhatsApp Web session (Playwright + a persistent browse
 It opens your own WhatsApp Web session (Playwright + persistent browser profile), personalizes one message per contact, and sends them sequentially with a courtesy delay (default 15s) between sends. Every attempt is written to delivery-log.csv (contact, preview, status, timestamp).
 
 100% local, no APIs, no third-party services. Demo data only. Ships notifier.py, requirements, run scripts, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/whatsapp-notifier.jpg',
         tags: ['Python', 'Playwright', 'WhatsApp', 'Bulk Messaging', 'Templates'],
         liveLink: 'https://drive.google.com/file/d/17fCAjs0-lnzGYrwwpxiWFQlv53lvdntE/view?usp=drivesdk',
         sourceCode: null
@@ -496,7 +478,7 @@ Data-Cleaner.xlsm ships a Raw-Data sheet (40 messy fictional rows: ID, name, ema
 6. Writes a before/after summary so every fix is verifiable.
 
 Ships .xlsm, .bas source, README, TEST-REPORT.md, and a demo video.`,
-        image: '/projects/playwright-qa.jpg',
+        image: '/projects/auto/excel-vba-data-cleaner.jpg',
         tags: ['Excel VBA', 'Data Cleaning', 'Data Quality', 'Dedupe', 'Validation'],
         liveLink: 'https://drive.google.com/file/d/1Xzt-tiSMVBgRlu3BHG-su2MXfyA9okO4/view?usp=drivesdk',
         sourceCode: null
