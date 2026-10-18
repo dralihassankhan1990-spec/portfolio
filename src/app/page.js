@@ -7,6 +7,7 @@ import ComponentsPreview from '@/components/ComponentsPreview';
 import ServicesCTA from '@/components/ServicesCTA';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import "./globals.css";
 
 export default function Home() {
@@ -17,12 +18,12 @@ export default function Home() {
         <Hero />
 
         <div className="w-full flex flex-col items-center">
-          <WorkExperience />
-          <Skills />
-          <Projects preview={true} />
-          <ComponentsPreview />
-          <ServicesCTA />
-          <Contact />
+          <Reveal><WorkExperience /></Reveal>
+          <Reveal><Skills /></Reveal>
+          <Reveal><Projects preview={true} /></Reveal>
+          <Reveal><ComponentsPreview /></Reveal>
+          <Reveal><ServicesCTA /></Reveal>
+          <Reveal><Contact /></Reveal>
         </div>
 
         <Footer />

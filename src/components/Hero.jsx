@@ -1,9 +1,13 @@
 "use client";
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FiArrowDown, FiCpu, FiLayers, FiCheckCircle } from 'react-icons/fi';
 import "../app/globals.css";
+
+// Three.js scene is client-only — never rendered on the server.
+const HeroScene = dynamic(() => import('./HeroScene'), { ssr: false });
 
 const floatBadges = [
     { icon: <FiCpu />, label: 'AI Apps', x: '-12%', y: '8%', delay: 0 },
@@ -15,37 +19,31 @@ const Hero = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
-    // Scroll-driven 3D transforms: hero "opens up" as you scroll
+    // Plain ref mirror of scroll progress — read inside the Three.js frame loop
+    // without triggering React re-renders.
+    const progressRef = useRef(0);
+    useEffect(() => scrollYProgress.on('change', (v) => { progressRef.current = v; }), [scrollYProgress]);
+
+    // Scroll-driven 3D transforms on the content layer.
     const imgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
     const imgRotate = useTransform(scrollYProgress, [0, 1], [0, -12]);
     const imgScale = useTransform(scrollYProgress, [0, 1], [1, 0.82]);
     const textY = useTransform(scrollYProgress, [0, 1], [0, 220]);
     const textOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-    const orbsY = useTransform(scrollYProgress, [0, 1], [0, -160]);
+    const sceneOpacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.25]);
 
     return (
         <section id="home" ref={ref} className="hero-section position-relative overflow-hidden" style={{ minHeight: '100vh', paddingTop: '110px' }}>
-            {/* Animated ambient orbs */}
-            <motion.div style={{ y: orbsY }} className="position-absolute w-100 h-100" aria-hidden>
-                <motion.div
-                    className="position-absolute rounded-circle"
-                    style={{ width: 480, height: 480, left: '-120px', top: '6%', background: 'radial-gradient(circle, rgba(34,211,238,0.22) 0%, transparent 70%)', filter: 'blur(10px)' }}
-                    animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
-                    transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <motion.div
-                    className="position-absolute rounded-circle"
-                    style={{ width: 520, height: 520, right: '-140px', top: '30%', background: 'radial-gradient(circle, rgba(129,140,248,0.20) 0%, transparent 70%)', filter: 'blur(10px)' }}
-                    animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
-                    transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <motion.div
-                    className="position-absolute rounded-circle"
-                    style={{ width: 380, height: 380, left: '38%', bottom: '-80px', background: 'radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%)', filter: 'blur(10px)' }}
-                    animate={{ x: [0, 30, 0], y: [0, -24, 0] }}
-                    transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-                />
+            {/* 3D scroll-driven background */}
+            <motion.div style={{ opacity: sceneOpacity }} className="position-absolute w-100 h-100 top-0 start-0" aria-hidden>
+                <HeroScene progressRef={progressRef} />
             </motion.div>
+            {/* Readability gradient over the 3D layer */}
+            <div
+                className="position-absolute w-100 h-100 top-0 start-0"
+                style={{ background: 'linear-gradient(to bottom, rgba(6,10,20,0.25) 0%, rgba(6,10,20,0.55) 70%, var(--bg-primary) 100%)', pointerEvents: 'none' }}
+                aria-hidden
+            />
 
             <Container className="position-relative" style={{ zIndex: 2 }}>
                 <Row className="align-items-center">
