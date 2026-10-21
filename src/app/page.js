@@ -1,3 +1,4 @@
+import DeliveryJourney from '@/components/DeliveryJourney';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Skills from '@/components/Skills';
@@ -15,14 +16,14 @@ export default function Home() {
     <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
       <main className="relative z-10">
         <Navbar />
-        <Hero />
+        <Hero /><DeliveryJourney />
 
         <div className="w-full flex flex-col items-center">
           <Reveal><WorkExperience /></Reveal>
-          <Reveal><Skills /></Reveal>
-          <Reveal><Projects preview={true} /></Reveal>
+          <Reveal variant="left"><Skills /></Reveal>
+          <Reveal variant="right"><Projects preview={true} /></Reveal>
           <Reveal><ComponentsPreview /></Reveal>
-          <Reveal><ServicesCTA /></Reveal>
+          <Reveal variant="left"><ServicesCTA /></Reveal>
           <Reveal><Contact /></Reveal>
         </div>
 

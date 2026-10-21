@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const WA_URL =
   "https://wa.me/923394056390?text=" +
-  encodeURIComponent("Hi Ali! I'm interested in your work.");
+  encodeURIComponent("Hi Bilal! I'm interested in your work.");
 
 export default function WhatsAppFloat() {
   const [tip, setTip] = useState(false);

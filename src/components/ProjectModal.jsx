@@ -31,7 +31,7 @@ const ProjectModal = ({ project, show, onHide }) => {
                 <div className="d-flex gap-2">
                     {project.liveLink && (
                         <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-glow-cyan d-flex align-items-center gap-1">
-                            <FiExternalLink size={13} /> Live Demo
+                            <FiExternalLink size={13} /> {project.liveLink?.includes("drive.google.com") ? "Watch Demo" : "Open App"}
                         </a>
                     )}
                     {project.sourceCode && (

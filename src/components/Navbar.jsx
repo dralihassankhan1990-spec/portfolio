@@ -24,7 +24,7 @@ const Navigation = () => {
         if (typeof window === 'undefined') {
             return pathname === '/projects' ? 'projects' : 'home';
         }
-        
+
         const hash = window.location.hash;
         if (pathname === '/') {
             if (hash === '#WorkExperience') return 'WorkExperience';
@@ -33,6 +33,7 @@ const Navigation = () => {
             return 'home';
         }
         if (pathname === '/projects') return 'projects';
+        if (pathname === '/components') return 'components';
         return 'home';
     };
 
@@ -53,8 +54,8 @@ const Navigation = () => {
     };
 
     return (
-        <Navbar 
-            expand="lg" 
+        <Navbar
+            expand="lg"
             expanded={expanded}
             className={`navbar-custom fixed-top ${scrolled ? 'scrolled' : ''}`}
             style={{
@@ -65,8 +66,8 @@ const Navigation = () => {
             }}
         >
             <Container>
-                <Navbar.Brand 
-                    href="/" 
+                <Navbar.Brand
+                    href="/"
                     className="text-white fw-bold"
                     style={{
                         fontSize: '1.5rem',
@@ -76,8 +77,8 @@ const Navigation = () => {
                 >
                     Muhammad Bilal
                 </Navbar.Brand>
-                <Navbar.Toggle 
-                    aria-controls="basic-navbar-nav" 
+                <Navbar.Toggle
+                    aria-controls="basic-navbar-nav"
                     onClick={() => setExpanded(expanded ? false : true)}
                     style={{
                         border: 'none',
@@ -86,7 +87,7 @@ const Navigation = () => {
                         boxShadow: 'none'
                     }}
                 >
-                    <span 
+                    <span
                         className="navbar-toggler-icon"
                         style={{
                             backgroundImage: "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
@@ -95,19 +96,19 @@ const Navigation = () => {
                         }}
                     />
                 </Navbar.Toggle>
-                <Navbar.Collapse 
+                <Navbar.Collapse
                     id="basic-navbar-nav"
                     className="justify-content-end"
                 >
-                    <Nav 
+                    <Nav
                         className="align-items-lg-center"
                         style={{
                             padding: '0.1rem 0',
                             gap: '1rem'
                         }}
                     >
-                        <Nav.Link 
-                            href="/" 
+                        <Nav.Link
+                            href="/"
                             className={getActiveSection() === 'home' ? 'active' : ''}
                             onClick={(e) => handleNavClick(e, '/')}
                             style={{
@@ -121,8 +122,8 @@ const Navigation = () => {
                         >
                             Home
                         </Nav.Link>
-                        <Nav.Link 
-                            href="/#WorkExperience" 
+                        <Nav.Link
+                            href="/#WorkExperience"
                             className={getActiveSection() === 'WorkExperience' ? 'active' : ''}
                             onClick={(e) => handleNavClick(e, '#WorkExperience', true)}
                             style={{
@@ -166,7 +167,7 @@ const Navigation = () => {
                         </Nav.Link>
 
                         <Nav.Link
-                            href="#contact" 
+                            href="#contact"
                             className={getActiveSection() === 'contact' ? 'active' : ''}
                             onClick={(e) => handleNavClick(e, '#contact', true)}
                             style={{

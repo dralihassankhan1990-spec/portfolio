@@ -17,13 +17,13 @@ const Contact = () => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
         };
-        
+
         // Set initial value
         handleResize();
-        
+
         // Add event listener
         window.addEventListener('resize', handleResize);
-        
+
         // Clean up
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -43,8 +43,8 @@ const Contact = () => {
                                 </div>
                             </div>
                         )}
-                        <p style={{ 
-                            fontSize: '1.2rem', 
+                        <p style={{
+                            fontSize: '1.2rem',
                             color: 'var(--text-primary)',
                             lineHeight: '1.8',
                             marginBottom: '2rem'
@@ -55,15 +55,15 @@ const Contact = () => {
                             feel free to reach out — I'm always open to discussing new projects,
                             creative ideas, or opportunities to be part of your vision.
                         </p>
-                        
-                        <div style={{ 
-                            width: '100%', 
-                            maxWidth: '600px', 
+
+                        <div style={{
+                            width: '100%',
+                            maxWidth: '600px',
                             margin: '2rem auto',
                             padding: '0 1rem'
                         }}>
-                            <a 
-                                href={requestedItem ? `mailto:dr.bilal492@gmail.com?subject=${encodeURIComponent("Component request: " + requestedItem)}` : "mailto:dr.bilal492@gmail.com"} 
+                            <a
+                                href={requestedItem ? `mailto:dr.bilal492@gmail.com?subject=${encodeURIComponent("Component request: " + requestedItem)}` : "mailto:dr.bilal492@gmail.com"}
                                 style={{
                                     display: 'flex',
                                     flexDirection: isMobile ? 'column' : 'row',
@@ -119,8 +119,8 @@ const Contact = () => {
                                 </div>
                             </a>
 
-                            <a 
-                                href="tel:+923394056390" 
+                            <a
+                                href="https://wa.me/923394056390"
                                 style={{
                                     display: 'flex',
                                     flexDirection: isMobile ? 'column' : 'row',
@@ -176,7 +176,7 @@ const Contact = () => {
                                 </div>
                             </a>
                         </div>
-                        
+
                         <p style={{
                             fontSize: '1.1rem',
                             color: 'var(--text-secondary)',

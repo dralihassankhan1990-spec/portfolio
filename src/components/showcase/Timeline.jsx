@@ -2,12 +2,11 @@
 import React from "react";
 
 const MILESTONES = [
-  { year: "2018", title: "Joined PITB", text: "Started as Program Officer driving GovTech digital transformation." },
-  { year: "2021", title: "MPhil Food Safety", text: "Completed MPhil in Food Safety & Control from UVAS." },
-  { year: "2024", title: "PAFDA LIMS Lead", text: "Led the PKR 85M LIMS implementation as project lead." },
-  { year: "2026", title: "AI Delivery", text: "Shipping AI-driven QA automation and portfolio products." },
+{year:'01',title:'Discovery',text:'Sample milestone: align requirements and scope.'},
+{year:'02',title:'Implementation',text:'Sample milestone: build and integrate the solution.'},
+{year:'03',title:'Acceptance',text:'Sample milestone: validate with users.'},
+{year:'04',title:'Release',text:'Sample milestone: launch and support adoption.'},
 ];
-
 export default function Timeline() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", padding: "8px 4px" }}>

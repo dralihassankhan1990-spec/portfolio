@@ -122,7 +122,7 @@ All data currently mocked via mockData.ts with a documented path to plug in a re
         id: 6,
         title: 'PortionVision - AR Portion-Size Visualizer',
         category: 'ai',
-        description: 'Competition-winning food portion visualizer: 20+ foods with standard serving sizes, mental-model comparisons (3oz steak = deck of cards), and a camera AR overlay that projects a wireframe reference object onto the real world. Zero-backend — runs fully client-side with LocalStorage.',
+        description: 'Food portion visualizer: 20+ foods with standard serving sizes, mental-model comparisons (3oz steak = deck of cards), and a camera AR overlay that projects a wireframe reference object onto the real world. Zero-backend — runs fully client-side with LocalStorage.',
         fullDescription: `PortionVision - AR Portion-Size Visualizer
 Built with React 18 and Vite. Competition entry.
 

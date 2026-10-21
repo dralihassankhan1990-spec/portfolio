@@ -41,8 +41,8 @@ export default function GlassmorphismCard() {
           MB
         </div>
         <div>
-          <div style={{ fontSize: 17, fontWeight: 700, color: "#fff" }}>Muhammad Bilal</div>
-          <div style={{ fontSize: 12, color: "#22d3ee" }}>Project Manager · GovTech</div>
+          <div style={{ fontSize: 17, fontWeight: 700, color: "#fff" }}>Sample Profile</div>
+          <div style={{ fontSize: 12, color: "#22d3ee" }}>Demo dashboard profile</div>
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>

@@ -9,6 +9,7 @@ import "../globals.css";
 
 // Component registry — maps data file names to lazy components
 const registry = {
+ DeliveryDemo: React.lazy(() => import('@/components/showcase/DeliveryDemo')),
     GlassmorphismCard: React.lazy(() => import('@/components/showcase/GlassmorphismCard')),
     Card3D: React.lazy(() => import('@/components/showcase/Card3D')),
     AnimatedButton: React.lazy(() => import('@/components/showcase/AnimatedButton')),
@@ -70,9 +71,9 @@ const ComponentCard = ({ item, index, onGetCode }) => {
                     </div>
                 </div>
                 <div className="p-3 d-flex align-items-center justify-content-center" style={{ minHeight: '220px', background: 'rgba(0,0,0,0.25)' }}>
-                    <Suspense fallback={<div style={{ color: 'var(--text-muted)' }}>Loading…</div>}>
-                        {Preview ? <Preview /> : <div style={{ color: 'var(--text-muted)' }}>Preview soon</div>}
-                    </Suspense>
+                    <div className="w-100"><div style={{fontSize:9,color:"#94a3b8",marginBottom:10,letterSpacing:".1em"}}>LIVE PREVIEW · ILLUSTRATIVE CONTENT</div><Suspense fallback={<div style={{ color: 'var(--text-muted)' }}>Loading…</div>}>
+                        {Preview ? <Preview kind={item.kind} /> : <div style={{ color: 'var(--text-muted)' }}>Preview soon</div>}
+                    </Suspense></div>
                 </div>
                 <div className="p-3 d-flex flex-column flex-grow-1">
                     <h6 className="fw-bold mb-1" style={{ color: 'var(--text-primary)' }}>{item.name}</h6>
@@ -80,7 +81,7 @@ const ComponentCard = ({ item, index, onGetCode }) => {
                     <div className="mt-auto">
                         {isPro ? (
                             <button onClick={() => onGetCode(item)} className="btn btn-sm btn-glow-gold w-100 d-flex align-items-center justify-content-center gap-2">
-                                <FiLock size={13} /> Get This Code
+                                <FiLock size={13} /> Get Paid Component
                             </button>
                         ) : (
                             <button onClick={() => onGetCode(item)} className="btn btn-sm btn-glow-cyan w-100 d-flex align-items-center justify-content-center gap-2">
@@ -106,12 +107,7 @@ export default function ComponentsPage() {
     });
 
     const handleGetCode = (item) => {
-        if (item.tier === 'pro') {
-            // Redirect to contact with the component pre-selected
-            window.location.href = `/#contact?item=${encodeURIComponent(item.name)}`;
-        } else {
-            setSelected(item);
-        }
+        window.location.href = `/?item=${encodeURIComponent(item.name)}#contact`;
     };
 
     return (
@@ -122,7 +118,7 @@ export default function ComponentsPage() {
                     <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-center mb-5">
                         <h1 className="section-heading mb-3">UI <span className="text-gradient-gold">Component Store</span></h1>
                         <p className="mx-auto" style={{ color: 'var(--text-muted)', maxWidth: '660px' }}>
-                            Production-ready React components I designed and built. <strong style={{ color: '#4ade80' }}>Free</strong> ones — take the code.
+                            Interactive React component concepts and reusable interface patterns. <strong style={{ color: '#4ade80' }}>Free</strong> ones — request the source.
                             <strong className="text-gradient-gold"> Pro</strong> ones — message me and they&apos;re yours, with setup help included.
                         </p>
                         <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">

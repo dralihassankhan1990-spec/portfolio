@@ -22,8 +22,7 @@ export default function TestimonialCard() {
         ))}
       </div>
       <p style={{ fontSize: 14, lineHeight: 1.7, color: "#d1d5db", fontStyle: "italic", margin: "0 0 18px" }}>
-        "Bilal transformed our paper-based lab workflows into a real-time digital system. His project management and
-        attention to detail are world-class — delivery was early and flawless."
+        "This is placeholder review text demonstrating the layout. Replace it with a verified client testimonial before publishing."
       </p>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <div
@@ -43,8 +42,8 @@ export default function TestimonialCard() {
           SK
         </div>
         <div>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>Sarah Khan</div>
-          <div style={{ fontSize: 11, color: "#22d3ee" }}>Operations Director, Client Project</div>
+          <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>Sample Reviewer</div>
+          <div style={{ fontSize: 11, color: "#22d3ee" }}>Illustrative content only</div>
         </div>
       </div>
     </div>

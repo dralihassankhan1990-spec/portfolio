@@ -1,7 +1,8 @@
+import { deliveryComponents } from './DeliveryDemo';
 // Showcase component catalog for the portfolio marketplace.
 // tier: 'free' = full source included, 'pro' = contact to unlock.
 
-export const componentsData = [
+export const componentsData = [...deliveryComponents,
   {
     id: "glassmorphism-card",
     name: "Glassmorphism Card",

@@ -54,13 +54,13 @@ const ProjectCard = ({ project, index }) => {
                                 </span>
                             ))}
                         </div>
-                        <div className="mt-auto d-flex flex-wrap gap-2">
+                        <div className="mt-auto d-flex flex-wrap gap-2">{!project.liveLink && <a className="btn btn-sm btn-outline-info" href={`/?item=${encodeURIComponent(project.title)}#contact`}>Request walkthrough</a>}
                             <button onClick={() => setShowModal(true)} className="btn btn-sm btn-glow-cyan d-flex align-items-center gap-1">
                                 <FiInfo size={13} /> Details
                             </button>
                             {project.liveLink && (
                                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm d-flex align-items-center gap-1" style={{ border: '1px solid rgba(34,211,238,0.5)', color: 'var(--text-primary)' }}>
-                                    <FiExternalLink size={13} /> Live
+                                    <FiExternalLink size={13} /> {project.liveLink?.includes("drive.google.com") ? "Watch Demo" : "Open App"}
                                 </a>
                             )}
                             {project.sourceCode && (

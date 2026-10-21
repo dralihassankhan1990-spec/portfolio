@@ -25,7 +25,7 @@ const Projects = ({ preview = true }) => {
                         My <span className="text-gradient-cyan">Projects</span>
                     </h2>
                     <p className="mx-auto" style={{ color: 'var(--text-muted)', maxWidth: '640px' }}>
-                        Real systems, built end-to-end — pick a category and dive in. Every card opens full details, live demos, and source code.
+                        Real systems, built end-to-end — pick a category and dive in. Explore the project brief, available demos, and published source.
                     </p>
                 </motion.div>
 

@@ -1,3 +1,4 @@
+import DeliveryJourney from '@/components/DeliveryJourney';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
@@ -13,7 +14,7 @@ export default function ProjectsPage() {
         <div className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
             <Navbar />
             <main className="position-relative" style={{ zIndex: 1, paddingTop: '100px' }}>
-                <Projects preview={false} />
+                <DeliveryJourney /><Projects preview={false} />
             </main>
             <Footer />
         </div>

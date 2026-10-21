@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Briefcase, ClipboardCheck, Code2, Bot } from 'lucide-react';
 
 const workExperiences = [
-    { id: 1, icon: 'Briefcase', title: 'GovTech Program Delivery', description: 'Program Officer / Project Coordinator at PITB since 2018. Leading the PAFDA LIMS digital-transformation program — multi-module scope, BRDs, dashboards, and stakeholder coordination across client, senior management, and PMO.' },
+    { id: 1, icon: 'Briefcase', title: 'GovTech Program Delivery', description: 'Program Officer / Project Coordinator at PITB. Coordinating the PAFDA LIMS digital-transformation program — multi-module scope, BRDs, dashboards, and stakeholder coordination across client, senior management, and PMO.' },
     { id: 2, icon: 'ClipboardCheck', title: 'Business Analysis & UAT', description: 'Multi-module QMS BRDs with UI screens, test-case design, UAT planning and execution, go-live support, and training material — turning requirements into systems users actually accept.' },
     { id: 3, icon: 'Code2', title: 'Web & AI App Development', description: 'React and Node.js applications with AI integrations: face-recognition attendance, gesture-controlled interfaces, nutrition platforms, and lab systems — built end-to-end and deployed on Vercel.' },
     { id: 4, icon: 'Bot', title: 'QA Automation', description: 'Excel-driven Playwright automation with video evidence and narrated reporting — 5/5 scenarios passing. Repeatable, documented, and built for real QA workflows.' }
@@ -73,9 +73,9 @@ const WorkExperience = () => {
                 zIndex: 1
             }}>
                 {/* Section Title */}
-                <div style={{ 
-                    textAlign: isMobile ? 'center' : 'left', 
-                    marginBottom: isMobile ? '40px' : '60px' 
+                <div style={{
+                    textAlign: isMobile ? 'center' : 'left',
+                    marginBottom: isMobile ? '40px' : '60px'
                 }}>
                     <h2 style={{
                         fontSize: isMobile ? '2rem' : 'var(--font-size-heading)',
@@ -124,20 +124,20 @@ const WorkExperience = () => {
                                 }
                             }}
                         >
-                            <div style={{ 
-                                display: 'flex', 
-                                gap: isMobile ? '16px' : '20px', 
+                            <div style={{
+                                display: 'flex',
+                                gap: isMobile ? '16px' : '20px',
                                 flex: 1,
                                 flexDirection: isMobile ? 'row' : 'row'
                             }}>
-                                <div style={{ 
-                                    width: isMobile ? '70px' : '100px', 
-                                    height: isMobile ? '70px' : '100px', 
-                                    display: 'flex', 
-                                    alignItems: 'center', 
-                                    justifyContent: 'center', 
-                                    background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(168, 85, 247, 0.6) 100%)', 
-                                    borderRadius: '16px', 
+                                <div style={{
+                                    width: isMobile ? '70px' : '100px',
+                                    height: isMobile ? '70px' : '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(168, 85, 247, 0.6) 100%)',
+                                    borderRadius: '16px',
                                     boxShadow: '0 4px 16px rgba(139, 92, 246, 0.3)',
                                     flexShrink: 0
                                 }}>
@@ -146,25 +146,25 @@ const WorkExperience = () => {
                                     {exp.icon === 'Code2' && <Code2 size={isMobile ? 40 : 60} color="#ffffff" strokeWidth={1.5} />}
                                     {exp.icon === 'Bot' && <Bot size={isMobile ? 40 : 60} color="#ffffff" strokeWidth={1.5} />}
                                 </div>
-                                <div style={{ 
-                                    flex: 1, 
-                                    display: 'flex', 
-                                    flexDirection: 'column' 
+                                <div style={{
+                                    flex: 1,
+                                    display: 'flex',
+                                    flexDirection: 'column'
                                 }}>
                                     <div>
-                                        <h3 style={{ 
-                                            fontSize: isMobile ? '1.25rem' : 'var(--font-size-subheading)', 
-                                            color: 'white', 
-                                            fontWeight: '700', 
-                                            margin: '0 0 12px 0' 
+                                        <h3 style={{
+                                            fontSize: isMobile ? '1.25rem' : 'var(--font-size-subheading)',
+                                            color: 'white',
+                                            fontWeight: '700',
+                                            margin: '0 0 12px 0'
                                         }}>
                                             {exp.title}
                                         </h3>
-                                        <p style={{ 
-                                            fontSize: isMobile ? '0.9rem' : 'var(--font-size-body)', 
-                                            color: 'var(--text-secondary)', 
-                                            lineHeight: '1.6', 
-                                            margin: 0 
+                                        <p style={{
+                                            fontSize: isMobile ? '0.9rem' : 'var(--font-size-body)',
+                                            color: 'var(--text-secondary)',
+                                            lineHeight: '1.6',
+                                            margin: 0
                                         }}>
                                             {exp.description}
                                         </p>

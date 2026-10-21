@@ -116,7 +116,7 @@ const Hero = () => {
                                 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
                                 className="mt-4" style={{ fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '560px' }}
                             >
-                                8+ years turning requirements into working systems — from LIMS and QMS to AI-powered apps and test automation.
+                                Turning requirements into working systems — from LIMS and QMS to AI-powered apps and test automation.
                             </motion.p>
                             <motion.div
                                 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
@@ -150,7 +150,7 @@ const Hero = () => {
                             className="mt-4"
                         >
                             <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-                                I lead the PAFDA Laboratory Information Management System program — multi-module delivery spanning LIMS, QMS, HR, and storage management — from BRDs and UAT through go-live and beyond.
+                                I coordinate delivery work for the PAFDA Laboratory Information Management System program — multi-module delivery spanning LIMS, QMS, HR, and storage management — from BRDs and UAT through go-live and beyond.
                             </p>
                             <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                                 Alongside delivery, I build: React and Node.js web applications, AI-powered tools using face recognition and gesture control, and Excel-driven Playwright test automation with narrated video reporting.
