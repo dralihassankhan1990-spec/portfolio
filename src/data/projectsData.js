@@ -482,5 +482,24 @@ Ships .xlsm, .bas source, README, TEST-REPORT.md, and a demo video.`,
         tags: ['Excel VBA', 'Data Cleaning', 'Data Quality', 'Dedupe', 'Validation'],
         liveLink: 'https://drive.google.com/file/d/1Xzt-tiSMVBgRlu3BHG-su2MXfyA9okO4/view?usp=drivesdk',
         sourceCode: null
+    },
+    {
+        id: 27,
+        title: 'Excel for IT Project Management — 42 Formula Demos',
+        category: 'automation',
+        description: 'Training material: 42 short Excel formula demos taught on real IT project-management data (120 work items), narrated in Roman Urdu with English formulas on screen — plus the workbook, two presentations and a learning guide.',
+        fullDescription: `Excel for IT Project Management — 42 Formula Demos
+Training material by Muhammad Bilal: one short demo per Excel formula, taught on a real IT project dataset (120 work items across 4 fictional projects).
+
+• 42 demos, 01 XLOOKUP → 42 SUBSTITUTE/CLEAN — each shows the formula, the result, the common error and the fix
+• Roman Urdu narration; English formula names, column names and on-screen text; workbook columns and results verified
+• Workbook (14 sheets), detailed presentation (48 slides), concise presentation (45 slides), Word learning guide
+• Watch: Unlisted YouTube playlist (all 42 demos in order) + combined 25-minute video; workbook, presentations and guide on GitHub
+
+Voice: Google Gemini TTS, voice Achird — the same voice across all 42 demos.`,
+        image: '/projects/excel-it-pm-training.jpg',
+        tags: ['Excel', 'Formulas', 'Training', 'Roman Urdu', 'Video Course'],
+        liveLink: 'https://www.youtube.com/playlist?list=PLbvk4Aqr_n70',
+        sourceCode: 'https://github.com/dralihassankhan1990-spec/excel-for-IT-project-management'
     }
 ];

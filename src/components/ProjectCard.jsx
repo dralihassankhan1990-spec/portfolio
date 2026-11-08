@@ -60,7 +60,7 @@ const ProjectCard = ({ project, index }) => {
                             </button>
                             {project.liveLink && (
                                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm d-flex align-items-center gap-1" style={{ border: '1px solid rgba(34,211,238,0.5)', color: 'var(--text-primary)' }}>
-                                    <FiExternalLink size={13} /> {project.liveLink?.includes("drive.google.com") ? "Watch Demo" : "Open App"}
+                                    <FiExternalLink size={13} /> {project.liveLink?.includes("drive.google.com") ? "Watch Demo" : project.liveLink?.includes("youtube.com") ? "Watch Playlist" : "Open App"}
                                 </a>
                             )}
                             {project.sourceCode && (
